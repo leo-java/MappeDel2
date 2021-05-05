@@ -74,7 +74,7 @@ public class AddPatientController {
     }
 
     public Patient getPatient() {
-        return new Patient(getSocialSecurityNumber().getText(),getFirstName().getText(),getLastName().getText(),getDiagnosis().getText(),getGeneralPractitioner().getText());
+        return new Patient(getFirstName().getText(),getLastName().getText(),getGeneralPractitioner().getText(),getSocialSecurityNumber().getText());
     }
 
     public void addButtonPressed(ActionEvent actionEvent) {

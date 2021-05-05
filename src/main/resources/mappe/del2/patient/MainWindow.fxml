@@ -10,7 +10,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.image.Image?>
 
 <BorderPane minHeight="720" minWidth="1280" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mappe.del2.patient.MainWindowController">
    <top>
@@ -20,9 +19,9 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Import from .CSV" />
-                        <MenuItem mnemonicParsing="false" text="Export to .CSV" />
-                        <MenuItem mnemonicParsing="false" text="Exit" />
+                    <MenuItem mnemonicParsing="false" text="Import from .CSV" onAction="#importCSV"/>
+                        <MenuItem mnemonicParsing="false" text="Export to .CSV" onAction="#exportCSV"/>
+                        <MenuItem mnemonicParsing="false" text="Exit" onAction="#exitApplication"/>
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
@@ -66,8 +65,8 @@
           <TableColumn fx:id="firstNameColumn" prefWidth="384.0" text="First name" />
           <TableColumn fx:id="lastNameColumn" prefWidth="384.0" text="Last name" />
             <TableColumn fx:id="socialSecurityNumberColumn" prefWidth="384.0" text="Social security number" />
-            <TableColumn fx:id="diagnosisColumn" prefWidth="384.0" text="Diagnosis" />
             <TableColumn fx:id="generalPractitionerColumn" prefWidth="384.0" text="General practitioner" />
+            <TableColumn fx:id="diagnosisColumn" prefWidth="384.0" text="Diagnosis" />
         </columns>
       </TableView>
    </center>

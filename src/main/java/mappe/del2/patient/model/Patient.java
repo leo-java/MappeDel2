@@ -7,11 +7,10 @@ public class Patient {
     private String diagnosis;
     private String generalPractitioner;
 
-    public Patient(String socialSecurityNumber, String firstName, String lastName, String diagnosis, String generalPractitioner) {
+    public Patient( String firstName, String lastName, String generalPractitioner, String socialSecurityNumber) {
         this.socialSecurityNumber = socialSecurityNumber;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.diagnosis = diagnosis;
         this.generalPractitioner = generalPractitioner;
     }
 
@@ -33,5 +32,9 @@ public class Patient {
 
     public String getGeneralPractitioner() {
         return generalPractitioner;
+    }
+
+    public void setDiagnosis(String diagnosis) {
+        this.diagnosis = diagnosis;
     }
 }

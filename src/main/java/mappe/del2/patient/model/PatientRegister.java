@@ -10,7 +10,7 @@ public class PatientRegister {
         this.patients = new ArrayList<>();
     }
 
-    public List<Patient> getPatients() {
+    public ArrayList<Patient> getPatients() {
         return this.patients;
     }
 
@@ -21,5 +21,14 @@ public class PatientRegister {
     }
     public void removePatient(Patient patient) {
         this.patients.remove(patient);
+    }
+
+    public void setPatients(ArrayList<Patient> newPatients) {
+        for (Patient patient:patients) {
+            removePatient(patient);
+        }
+        for (Patient patient:newPatients) {
+            patients.add(patient);
+        }
     }
 }
