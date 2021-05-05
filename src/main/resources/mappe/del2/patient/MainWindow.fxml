@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
@@ -19,9 +20,9 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Import from .CSV" onAction="#importCSV"/>
-                        <MenuItem mnemonicParsing="false" text="Export to .CSV" onAction="#exportCSV"/>
-                        <MenuItem mnemonicParsing="false" text="Exit" onAction="#exitApplication"/>
+                    <MenuItem mnemonicParsing="false" onAction="#importCSV" text="Import from .CSV" />
+                        <MenuItem mnemonicParsing="false" onAction="#exportCSV" text="Export to .CSV" />
+                        <MenuItem mnemonicParsing="false" onAction="#exitApplication" text="Exit" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
@@ -42,17 +43,24 @@
               <items>
                   <Button fx:id="openAddPatientViewButton" mnemonicParsing="false" onAction="#openAddPatientView">
                      <graphic>
-                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@addIcon.png" />
+                           </image></ImageView>
                      </graphic></Button>
                   <Button fx:id="openEditPatientViewButton" mnemonicParsing="false" onAction="#setOpenEditPatientView">
                      <graphic>
-                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@editIcon.png" />
+                           </image></ImageView>
                      </graphic></Button>
                 <Button fx:id="openDeletePatientViewButton" mnemonicParsing="false" onAction="#openDeletePatientView">
                      <graphic>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-
-                        </ImageView>
+                           <image>
+                              <Image url="@deleteIcon.png" />
+                           </image></ImageView>
                      </graphic></Button>
               </items>
             </ToolBar>
