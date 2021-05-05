@@ -118,11 +118,13 @@ public class MainWindowController implements Initializable {
     @FXML
     public void openDeletePatientView(ActionEvent actionEvent) {
         try {
+            Factory factory = new Factory();
             Patient selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Remove patient");
             alert.setHeaderText("Confirm patient removal");
             alert.setContentText("Are you sure you want to remove: " + selectedPatient.getFirstName() + selectedPatient.getLastName());
+            //Button button = (Button) factory.create("button");
             Optional<ButtonType> answer = alert.showAndWait();
             if (answer.get() == ButtonType.OK) {
                 patientRegister.removePatient(selectedPatient);
