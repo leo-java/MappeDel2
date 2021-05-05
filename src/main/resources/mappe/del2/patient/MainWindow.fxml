@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="mappe.del2.patient.MainWindowController"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane minHeight="720" minWidth="1280" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mappe.del2.patient.MainWindowController">
+   <top>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Import from .CSV" />
+                        <MenuItem mnemonicParsing="false" text="Export to .CSV" />
+                        <MenuItem mnemonicParsing="false" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem fx:id="openAddPatientViewButton1" mnemonicParsing="false" onAction="#openAddPatientView" text="Add new patient" />
+                        <MenuItem fx:id="openEditPatientViewButton1" mnemonicParsing="false" onAction="#setOpenEditPatientView" text="Edit selected patient" />
+                        <MenuItem fx:id="openDeletePatientViewButton1" mnemonicParsing="false" onAction="#openDeletePatientView" text="Remove selected patient" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem fx:id="openAboutView" mnemonicParsing="false" onAction="#openAboutView" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+              <items>
+                  <Button fx:id="openAddPatientViewButton" mnemonicParsing="false" onAction="#openAddPatientView">
+                     <graphic>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic></Button>
+                  <Button fx:id="openEditPatientViewButton" mnemonicParsing="false" onAction="#setOpenEditPatientView">
+                     <graphic>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic></Button>
+                <Button fx:id="openDeletePatientViewButton" mnemonicParsing="false" onAction="#openDeletePatientView">
+                     <graphic>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
 
-</AnchorPane>
+                        </ImageView>
+                     </graphic></Button>
+              </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="patientTableView" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="firstNameColumn" prefWidth="384.0" text="First name" />
+          <TableColumn fx:id="lastNameColumn" prefWidth="384.0" text="Last name" />
+            <TableColumn fx:id="socialSecurityNumberColumn" prefWidth="384.0" text="Social security number" />
+            <TableColumn fx:id="diagnosisColumn" prefWidth="384.0" text="Diagnosis" />
+            <TableColumn fx:id="generalPractitionerColumn" prefWidth="384.0" text="General practitioner" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

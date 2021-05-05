@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<DialogPane prefHeight="349.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="mappe.del2.patient.AddPatientController">
+   <content>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="81.0" layoutY="127.0" text="Social security number:" />
+            <Label layoutX="81.0" layoutY="70.0" text="Last name:" />
+            <Label layoutX="81.0" layoutY="17.0" text="First name:" />
+            <TextField fx:id="socialSecurityNumber" layoutX="224.0" layoutY="124.0" prefHeight="28.0" prefWidth="222.0" promptText="Type in social security number" />
+            <TextField fx:id="diagnosis" layoutX="224.0" layoutY="178.0" prefHeight="28.0" prefWidth="222.0" promptText="Type in diagnosis" />
+            <TextField fx:id="generalPractitioner" layoutX="224.0" layoutY="242.0" prefHeight="28.0" prefWidth="222.0" promptText="Type in name of general practitioner" />
+            <TextField fx:id="lastName" layoutX="224.0" layoutY="67.0" prefHeight="28.0" prefWidth="222.0" promptText="Type in last name" />
+            <TextField fx:id="firstName" layoutX="224.0" layoutY="14.0" prefHeight="28.0" prefWidth="222.0" promptText="Type in first name" />
+            <Label layoutX="81.0" layoutY="182.0" text="Diagnosis:" />
+            <Label layoutX="81.0" layoutY="246.0" text="General Practitioner:" />
+            <Button fx:id="closeButton" layoutX="518.0" layoutY="298.0" mnemonicParsing="false" text="Cancel" onAction="#cancelButtonPressed"/>
+            <Button fx:id="addPatientButton" layoutX="387.0" layoutY="298.0" mnemonicParsing="false" text="Add new Patient" onAction="#addButtonPressed"/>
+         </children>
+      </AnchorPane>
+   </content>
+</DialogPane>
