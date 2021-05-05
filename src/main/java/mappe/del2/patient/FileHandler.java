@@ -37,9 +37,9 @@ public class FileHandler {
 
     public void writeCSV(ArrayList<Patient> patientList, String filePath) throws IOException{
         try (FileWriter fileWriter = new FileWriter(String.valueOf(filePath))){
-            fileWriter.write("firstName;lastName;generalPractitioner;socialSecurityNumber;diagnosis");
+            fileWriter.write("firstName;lastName;generalPractitioner;socialSecurityNumber;diagnosis\n");
             for (Patient patient:patientList) {
-                String row = patient.getFirstName() + ";" + patient.getLastName() + ";" + patient.getGeneralPractitioner() + ";" + patient.getSocialSecurityNumber() + ";" + patient.getDiagnosis() + "\n";
+                String row = patient.getFirstName() + ";" + patient.getLastName() + ";" + patient.getGeneralPractitioner() + ";" + patient.getSocialSecurityNumber() + ";" + "\n";
                 fileWriter.append(row);
             }
         }catch (IOException e){

@@ -15,12 +15,17 @@ public class PatientRegister {
     }
 
     public void addPatient(Patient patient) {
+        if(patients.contains(patient)){
+            throw new IllegalArgumentException("Patient is already registered");
+        }
         if(patient != null){
             this.patients.add(patient);
         }
     }
     public void removePatient(Patient patient) {
-        this.patients.remove(patient);
+        if(patients.contains(patient)){
+            this.patients.remove(patient);
+        }
     }
 
     public void setPatients(ArrayList<Patient> newPatients) {

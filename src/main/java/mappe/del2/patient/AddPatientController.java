@@ -67,7 +67,7 @@ public class AddPatientController {
     }
 
     public boolean isAddedPatientValid() {
-        if(getFirstName().getText().trim().isBlank() || getLastName().getText().trim().isBlank() || getSocialSecurityNumber().getText().trim().isBlank() || getDiagnosis().getText().trim().isBlank() || getGeneralPractitioner().getText().trim().isBlank()){
+        if(getFirstName().getText().trim().isBlank() || getLastName().getText().trim().isBlank() || getSocialSecurityNumber().getText().trim().isBlank() || getGeneralPractitioner().getText().trim().isBlank()){
             return false;
         }
         return true;
@@ -79,7 +79,6 @@ public class AddPatientController {
 
     public void addButtonPressed(ActionEvent actionEvent) {
         if(isAddedPatientValid()){
-            CreatePatientValid = true;
             Stage stage = (Stage) addPatientButton.getScene().getWindow();
             stage.close();
         }else{

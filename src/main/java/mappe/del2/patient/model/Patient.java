@@ -8,6 +8,14 @@ public class Patient {
     private String generalPractitioner;
 
     public Patient( String firstName, String lastName, String generalPractitioner, String socialSecurityNumber) {
+        if(firstName == null || lastName == null || firstName.equalsIgnoreCase("") || lastName.equalsIgnoreCase("")){
+            throw new IllegalArgumentException("Full name is required");
+        }
+        try {
+            Long.parseLong(socialSecurityNumber);
+        }catch (NumberFormatException e){
+            throw new IllegalArgumentException("Social Security Number must be a number");
+        }
         this.socialSecurityNumber = socialSecurityNumber;
         this.firstName = firstName;
         this.lastName = lastName;
