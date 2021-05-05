@@ -5,10 +5,24 @@ import mappe.del2.patient.model.Patient;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * The type File handler.
+ */
 public class FileHandler {
+    /**
+     * Instantiates a new File handler.
+     */
     public FileHandler(){
     }
 
+    /**
+     * Read csv array list.
+     *
+     * @param file the file
+     * @return the array list
+     * @throws IOException the io exception
+     * reads from a csv file
+     */
     public ArrayList<Patient> readCSV(File file) throws IOException {
         ArrayList<Patient> newPatients = new ArrayList<>();
         try(FileReader fileReader = new FileReader(file)){
@@ -35,6 +49,14 @@ public class FileHandler {
         return newPatients;
     }
 
+    /**
+     * Write csv.
+     *
+     * @param patientList the patient list
+     * @param filePath    the file path
+     * @throws IOException the io exception
+     * writes to a csv file
+     */
     public void writeCSV(ArrayList<Patient> patientList, String filePath) throws IOException{
         try (FileWriter fileWriter = new FileWriter(String.valueOf(filePath))){
             fileWriter.write("firstName;lastName;generalPractitioner;socialSecurityNumber;diagnosis\n");

@@ -7,8 +7,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * The type Patient test.
+ */
 public class PatientTest {
 
+    /**
+     * Instantiate patient with invalid data throws.
+     */
     @Test
     @DisplayName("Patient doesn't instantiate if there is invalid data")
     public void instantiatePatientWithInvalidDataThrows(){
@@ -18,6 +24,9 @@ public class PatientTest {
         assertDoesNotThrow((() -> new Patient("A","B","C","12345678910")));
     }
 
+    /**
+     * Instantiate patient without name throws.
+     */
     @Test
     @DisplayName("Instantiate without name throws")
     public void instantiatePatientWithoutNameThrows(){

@@ -20,10 +20,12 @@ import mappe.del2.patient.model.PatientRegister;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+/**
+ * The type Main window controller.
+ */
 public class MainWindowController implements Initializable {
 
     private PatientRegister patientRegister;
@@ -41,21 +43,45 @@ public class MainWindowController implements Initializable {
     private TableColumn<Patient, String> diagnosisColumn;
     @FXML
     private TableColumn<Patient, String> generalPractitionerColumn;
+    /**
+     * The Open add patient view button.
+     */
     @FXML
     public Button openAddPatientViewButton;
+    /**
+     * The Open edit patient view button.
+     */
     @FXML
     public Button openEditPatientViewButton;
+    /**
+     * The Open delete patient view button.
+     */
     @FXML
     public Button openDeletePatientViewButton;
+    /**
+     * The Open add patient view button 1.
+     */
     @FXML
     public MenuItem openAddPatientViewButton1;
+    /**
+     * The Open edit patient view button 1.
+     */
     @FXML
     public MenuItem openEditPatientViewButton1;
+    /**
+     * The Open delete patient view button 1.
+     */
     @FXML
     public MenuItem openDeletePatientViewButton1;
+    /**
+     * The Open about view.
+     */
     @FXML
     public MenuItem openAboutView;
 
+    /**
+     * Initializes and shows the table
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.patientRegister = new PatientRegister();
@@ -71,6 +97,14 @@ public class MainWindowController implements Initializable {
     private void updateObservableList(){
         this.observablePatientList.setAll(this.patientRegister.getPatients());
     }
+
+    /**
+     * Open add patient view.
+     *
+     * @param actionEvent the action event
+     * @throws IOException the io exception
+     * opens the AddPatient view and adds patients
+     */
     @FXML
     public void openAddPatientView(ActionEvent actionEvent) throws IOException {
         try {
@@ -91,6 +125,14 @@ public class MainWindowController implements Initializable {
             System.out.println(e.getStackTrace());
         }
     }
+
+    /**
+     * Sets open edit patient view.
+     *
+     * @param actionEvent the action event
+     * @throws IOException the io exception
+     * Opens the AddPatient view and deletes the old version and creates a new version
+     */
     @FXML
     public void setOpenEditPatientView(ActionEvent actionEvent) throws IOException{
         try {
@@ -118,6 +160,13 @@ public class MainWindowController implements Initializable {
             System.out.println(e.getStackTrace());
         }
     }
+
+    /**
+     * Open delete patient view.
+     *
+     * @param actionEvent the action event
+     *                    Opens a delete confirmation alert
+     */
     @FXML
     public void openDeletePatientView(ActionEvent actionEvent) {
         try {
@@ -137,6 +186,13 @@ public class MainWindowController implements Initializable {
             System.out.println(e.getStackTrace());
         }
     }
+
+    /**
+     * Open about view.
+     *
+     * @param actionEvent the action event
+     *                    Opens an about application alert
+     */
     @FXML
     public void openAboutView(ActionEvent actionEvent){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -146,6 +202,13 @@ public class MainWindowController implements Initializable {
         alert.show();
     }
 
+    /**
+     * Import csv.
+     *
+     * @param actionEvent the action event
+     * @throws IOException the io exception
+     * Opens a file browser and imports data from a csv file
+     */
     public void importCSV(ActionEvent actionEvent) throws IOException{
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -162,6 +225,12 @@ public class MainWindowController implements Initializable {
         }
     }
 
+    /**
+     * Export csv.
+     *
+     * @param actionEvent the action event
+     *                    Opens a file browser and exports to a csv file
+     */
     public void exportCSV(ActionEvent actionEvent) {
         FileHandler fileHandler = new FileHandler();
         FileChooser fileChooser = new FileChooser();
@@ -177,6 +246,12 @@ public class MainWindowController implements Initializable {
         }
     }
 
+    /**
+     * Exit application.
+     *
+     * @param actionEvent the action event
+     *                    Exits the application
+     */
     public void exitApplication(ActionEvent actionEvent) {
         Platform.exit();
     }

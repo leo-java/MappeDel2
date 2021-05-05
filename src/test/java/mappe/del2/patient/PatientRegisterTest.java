@@ -9,15 +9,25 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * The type Patient register test.
+ */
 public class PatientRegisterTest {
 
     private PatientRegister patientRegister;
 
+    /**
+     * Init.
+     */
     @BeforeEach
     public void init() {
         patientRegister = new PatientRegister();
 
     }
+
+    /**
+     * Adding patients to register does not throw.
+     */
     @Test
     @DisplayName("Asserts add patients is possible")
     public void addingPatientsToRegisterDoesNotThrow(){
@@ -25,6 +35,9 @@ public class PatientRegisterTest {
         assertDoesNotThrow(() -> patientRegister.addPatient(patient));
     }
 
+    /**
+     * Adding duplicate patients throws.
+     */
     @Test
     @DisplayName("Asserts duplicate patients causes throw")
     public void addingDuplicatePatientsThrows(){
@@ -33,6 +46,9 @@ public class PatientRegisterTest {
         assertThrows(IllegalArgumentException.class, () -> patientRegister.addPatient(patient));
     }
 
+    /**
+     * Removing patients does not throw.
+     */
     @Test
     @DisplayName("Asserts removing patients is possible")
     public void removingPatientsDoesNotThrow(){
